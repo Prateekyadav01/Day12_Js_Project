@@ -54,7 +54,7 @@
     flex-direction: column;
     width: 50vh;
     height: 50vh;
-    border: 2px solid red;
+    border: 2px solid rgb(188, 186, 186);
     border-radius: 10px;
     justify-content: center;
     align-items: center;
