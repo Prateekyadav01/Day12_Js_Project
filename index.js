@@ -30,7 +30,7 @@ async function fetchsearch(a) {
         <img src=${phone.image} alt="noShow"/>
         <h5 class="card-title">${phone.brand}</h5>
         <p class="card-text">${phone.phone_name}</p>
-        <p class="card-text">${phone.price}</p>
+        <p class="card-text">${phone.slug}</p>
         </div>
         </div>
         `;
@@ -41,11 +41,12 @@ async function fetchsearch(a) {
     else if(a.length ==0) {
         alert('Please type to search');
         main.innerHTML="";
-        div.innerHTML = `<div class"no_results">
+        div.innerHTML = `
         <h1>No Results Found</h1>
-        <button class="btn">Show More</button>
-        </div>`;
+        <button onclick="handleFrontPage()" class="btn1">Show More</button>
+        `;
         phones=[];
+        div.classList.remove('card-front');
         div.classList.add('no_resultsdiv');
     }
     phones=[];
@@ -77,7 +78,7 @@ phones.forEach((phone)=>{
     <img src=${phone.image} alt="noShow"/>
     <h5 class="card-title">${phone.brand}</h5>
     <p class="card-text">${phone.phone_name}</p>
-    <p class="card-text">${phone.price}</p>
+    <p class="card-text">${phone.slug}</p>
     </div>
     </div>
     `;
@@ -86,3 +87,32 @@ phones.forEach((phone)=>{
 div.classList.add('card-front');
 main.appendChild(div);
 }
+
+
+async function handleFrontPage(){
+        let div = document.createElement('div');
+        main.innerHTML="";
+            
+        const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=oppo`);
+    // console.log(response);
+    const data = await response.json();
+    phones = data.data;
+    console.log(phones);
+    
+    
+    phones.forEach((phone)=>{
+        div.innerHTML += `
+        <div class="card">
+        <div class="card-body">
+        <img src=${phone.image} alt="noShow"/>
+        <h5 class="card-title">${phone.brand}</h5>
+        <p class="card-text">${phone.phone_name}</p>
+        <p class="card-text">${phone.slug}</p>
+        </div>
+        </div>
+        `;
+        
+    })
+    div.classList.add('card-front');
+    main.appendChild(div);
+    }

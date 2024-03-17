@@ -72,10 +72,35 @@
     justify-content: center;
     align-items: center;
 }
-.no_results{
+.yoyo{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30vw;
     border: 2px solid firebrick;
+}
+.btn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 5vh;
+    background-color: rgb(230, 71, 18);
+    color: white;
+    border-radius:10px;
+    cursor: pointer;
+    margin: 3px;
+}
+.no_resultsdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 30vw;
+    gap: 30px;
+    border: 2px solid firebrick;
+}
+.no_resultsdiv h1{
+    font-size: large;
+    font-weight: bold;
 }
