@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    width: 10%;
+    outline: none;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+    height: 7vh;
+}
+
+.btn:hover{
+    background-color: rgb(48, 208, 222);
+}
