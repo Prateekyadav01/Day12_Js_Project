@@ -19,3 +19,29 @@
 .btn:hover{
     background-color: rgb(48, 208, 222);
 }
+
+.footer {
+    display: grid;
+    width: 100%;
+    grid-auto-flow: row;
+    place-items: start;
+    row-gap: 2.5rem;
+    column-gap: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.footer-center {
+    place-items: center;
+    text-align: center;
+}
+
+@media (min-width: 48rem) {
+    .footer-center {
+        grid-auto-flow: row dense;
+    }
+    
+    .footer {
+        grid-auto-flow: column;
+    }
+}
+
