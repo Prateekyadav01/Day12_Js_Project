@@ -31,6 +31,7 @@ async function fetchsearch(a) {
         <h5 class="card-title">${phone.brand}</h5>
         <p class="card-text">${phone.phone_name}</p>
         <p class="card-text">${phone.slug}</p>
+        <button onclick="showDetailsHandler(${phone.id})" class="btn1">Show Details</button>
         </div>
         </div>
         `;
@@ -79,6 +80,7 @@ phones.forEach((phone)=>{
     <h5 class="card-title">${phone.brand}</h5>
     <p class="card-text">${phone.phone_name}</p>
     <p class="card-text">${phone.slug}</p>
+    <button onclick="showDetailsHandler(${phone.id})" class="btn1">Show Details</button>
     </div>
     </div>
     `;
@@ -108,6 +110,7 @@ async function handleFrontPage(){
         <h5 class="card-title">${phone.brand}</h5>
         <p class="card-text">${phone.phone_name}</p>
         <p class="card-text">${phone.slug}</p>
+        <button onclick="showDetailsHandler(${phone.id})" class="btn1">Show Details</button>
         </div>
         </div>
         `;
@@ -116,3 +119,43 @@ async function handleFrontPage(){
     div.classList.add('card-front');
     main.appendChild(div);
     }
+
+
+    // const showDetailsHandler = async (id)=>{
+    //     //console.log(id);
+    //     // load data
+    //     const res= await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    //     const data=await res.json();
+        
+    //     const phone=data.data;
+    //     showPhoneDetails(phone);
+    //     //console.log(phone);
+    // }
+    // const showPhoneDetails=(details)=>{
+    //     my_modal.showModal();
+    //     const modelName= document.getElementById('detailsPhoneName');
+    //     const brandName= document.getElementById('detailsBrand');
+    //     const detailsSpec= document.getElementById('detailsSpec');
+    //     const releaseDate= document.getElementById('releaseDate');
+    //     const imageDiv= document.getElementById('imgContainer');
+    
+    //     imageDiv.innerHTML=`<img src="${details.image}" alt="">`;
+    //     modelName.innerText=details.name;
+    //     brandName.innerText=`Brand: ${details.brand}`;
+    //     const features=details.mainFeatures;
+    //     //console.log(features.storage);
+    //     console.log(details.image);
+    //     let string="";
+    //     for (const key in features) {
+    
+    //         //detailsSpec.innerHTML=`${features[key]} <br>`;
+    
+    //         //detailsSpec.innerText=`${features[key]} <br>`;
+    //         //console.log(`${key}:${features[key]}`);
+    //         string=string+`${key}: ${features[key]} \n`;
+    
+    //     }
+    //     detailsSpec.innerText=string;
+    //     releaseDate.innerText=`${details.releaseDate}`;
+        
+    // }
